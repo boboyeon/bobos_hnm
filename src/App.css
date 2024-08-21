@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+.login_button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav_section {
+    display: flex;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu_section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.menu_area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0;
+    
 }
 
-.App-link {
-  color: #61dafb;
+.menu_list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; 
+    justify-content: center;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu_list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu_list li:hover {
+    color: rgb(133, 0, 0);
+}
+
+.input_area {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-left: auto;
+}
+
+.icon_search {  
+    color: #555;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.input_area input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 150px;
+}
+
+
+
+@media (max-width: 768px) {
+    .menu_area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input_area {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .input_area input {
+        width: 100%;
+    }
 }
