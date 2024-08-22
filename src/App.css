@@ -2,6 +2,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer;
 }
 
 .nav_section {
@@ -73,6 +74,26 @@
     font-size: 16px;
     width: 150px;
 }
+
+
+
+.product_card {
+    transition: transform 0.3s ease;
+    margin: 25px;
+}
+
+
+.product_card:hover {
+    transform: scale(1.05);
+}
+
+.product_card img {
+    width: 100%;
+}
+
+
+
+
 
 
 

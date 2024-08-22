@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const menuList = [
@@ -15,10 +16,15 @@ const Navbar = () => {
     "지속가능성",
   ];
 
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate("/login");
+  };
   return (
     <div>
       <div>
-        <div className="login_button">
+        <div className="login_button" onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
           <div>로그인</div>
         </div>
@@ -33,18 +39,18 @@ const Navbar = () => {
       </div>
 
       <div className="menu_section">
-    <div className="menu_area">
-        <ul className="menu_list">
+        <div className="menu_area">
+          <ul className="menu_list">
             {menuList.map((menu, index) => (
-                <li key={index}>{menu}</li>
+              <li key={index}>{menu}</li>
             ))}
-        </ul>
-        <div className="input_area">
+          </ul>
+          <div className="input_area">
             <FontAwesomeIcon className="icon_search" icon={faSearch} />
             <input type="text" placeholder="Search..." />
+          </div>
         </div>
-    </div>
-</div>
+      </div>
     </div>
   );
 };
