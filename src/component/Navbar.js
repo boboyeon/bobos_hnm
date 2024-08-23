@@ -27,33 +27,28 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
     }
   };
 
-  const goToHome = () => {
-    navigate("/"); // 메인 화면으로 이동
-  };
-
   const search = (event) => {
-    console.log("key press");
     if (event.key === "Enter") {
-      console.log("we click this key", event.key);
-      // 입력한 검색어를 읽어와서
       let keyword = event.target.value;
-      console.log("keyword", keyword);
-      // URL을 바꿔준다
       navigate(`/?q=${keyword}`);
     }
   };
 
   return (
     <BootstrapNavbar expand="lg" className="mb-3 custom-navbar">
-      <Container fluid>
-        <BootstrapNavbar.Brand onClick={() => navigate("/")}>
+      <Container fluid className="justify-content-between align-items-center">
+        <BootstrapNavbar.Toggle aria-controls="offcanvasNavbar" className="order-1" />
+        <BootstrapNavbar.Brand onClick={() => navigate("/")} className="order-2 mx-auto">
           <img
             width={100}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSWOhkrtrLKgKz35SOCEsZV-v2q_yeKpMgw&s"
             alt="메인로고"
           />
         </BootstrapNavbar.Brand>
-        <BootstrapNavbar.Toggle aria-controls="offcanvasNavbar" />
+        <div className="login_button ms-3 order-3" onClick={goToLogin}>
+          <FontAwesomeIcon icon={faUser} />
+          <div>{isAuthenticated ? "로그아웃" : "로그인"}</div>
+        </div>
         <BootstrapNavbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
@@ -78,10 +73,6 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
                   onKeyPress={(event) => search(event)}
                   placeholder="Search..."
                 />
-              </div>
-              <div className="login_button ms-3" onClick={goToLogin}>
-                <FontAwesomeIcon icon={faUser} />
-                <div>{isAuthenticated ? "로그아웃" : "로그인"}</div>
               </div>
             </div>
           </Offcanvas.Body>

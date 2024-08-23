@@ -1,4 +1,4 @@
-
+/* 기존 스타일 (큰 화면에서는 그대로 유지) */
 
 .login_button {
     display: flex;
@@ -154,35 +154,31 @@
     transform: scale(0.99);
 }
 
-
+/* 미디어 쿼리 - 작은 화면에서 햄버거 버튼 왼쪽, 로고 중앙, 사이드 메뉴 적용 */
 
 @media (max-width: 768px) {
-    .menu_area {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .input_area {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .input_area input {
-        width: 100%;
-    }
-
-    .login_button {
-        width: 100%;
+    .custom-navbar .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .navbar-toggler {
-        position: absolute;
+        position: relative;
         left: 0;
+        order: 1;
     }
 
     .navbar-brand {
+        order: 2;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .login_button {
+        order: 3;
+        margin-left: auto;
+        margin-right: 0;
     }
 
     .navbar-collapse {
