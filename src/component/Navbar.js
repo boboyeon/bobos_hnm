@@ -46,7 +46,7 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
   return (
     <BootstrapNavbar expand="lg" className="mb-3 custom-navbar">
       <Container fluid>
-        <BootstrapNavbar.Brand onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+        <BootstrapNavbar.Brand onClick={() => navigate("/")}>
           <img
             width={100}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSWOhkrtrLKgKz35SOCEsZV-v2q_yeKpMgw&s"
