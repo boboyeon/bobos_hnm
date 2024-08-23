@@ -1,5 +1,3 @@
-/* 기존 스타일 (큰 화면에서는 그대로 유지) */
-
 .login_button {
     display: flex;
     justify-content: flex-end;
@@ -154,7 +152,7 @@
     transform: scale(0.99);
 }
 
-/* 미디어 쿼리 - 작은 화면에서 햄버거 버튼 왼쪽, 로고 중앙, 사이드 메뉴 적용 */
+
 
 @media (max-width: 768px) {
     .custom-navbar .container-fluid {
@@ -164,8 +162,6 @@
     }
 
     .navbar-toggler {
-        position: relative;
-        left: 0;
         order: 1;
     }
 
