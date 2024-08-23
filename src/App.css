@@ -15,7 +15,7 @@
     justify-content: center;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
 }
@@ -28,7 +28,7 @@
     max-width: 1200px;
     box-sizing: border-box;
     padding: 0;
-    
+
 }
 
 .menu_list {
@@ -36,7 +36,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-grow: 1; 
+    flex-grow: 1;
     justify-content: center;
 
 }
@@ -61,7 +61,7 @@
     margin-left: auto;
 }
 
-.icon_search {  
+.icon_search {
     color: #555;
     margin-right: 10px;
     font-size: 16px;
@@ -78,23 +78,81 @@
 
 
 .product_card {
-    transition: transform 0.3s ease;
-    margin: 25px;
+    margin: 20px;
 }
 
-
-.product_card:hover {
-    transform: scale(1.05);
+.card_img {
+    width: 100%;
+    overflow: hidden;
 }
 
 .product_card img {
     width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product_card img:hover {
+    transform: scale(1.1);
 }
 
 
 
+.product_img {
+    display: flex;
+    justify-content: flex-end;
+}
 
+.product_img img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+}
 
+.full-width-dropdown .dropdown-toggle {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.custom-dropdown-button .dropdown-toggle:hover {
+    background-color: darkred !important;
+    color: white !important;
+    border-color: darkred !important;
+  }
+
+.full-width-dropdown .dropdown-toggle, .plus_btn {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+.custom-dropdown-button .dropdown-toggle:hover,
+.custom-dropdown-button .dropdown-toggle:focus {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.full-width-dropdown .dropdown-menu {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+.plus_btn {
+    background-color: darkgrey;
+    margin-top: 20px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.plus_btn:active {
+    background-color: #707070; /* 클릭했을 때 색상을 더 진하게 변경 (예: #707070) */
+    transform: scale(0.99);
+}
 
 
 @media (max-width: 768px) {

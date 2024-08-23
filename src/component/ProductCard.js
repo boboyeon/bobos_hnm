@@ -8,7 +8,9 @@ const ProductCard = ({ item }) => {
   };
   return (
     <div className="product_card" onClick={showDetail}>
-      <img src={item?.img} alt="상품사진" />
+        <div className="card_img">
+        <img src={item?.img} alt="상품사진" />
+        </div>
       <div>{item?.choice === true ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
       <div>{item?.price}원</div>
