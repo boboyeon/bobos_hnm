@@ -1,3 +1,5 @@
+
+
 .login_button {
     display: flex;
     justify-content: flex-end;
@@ -32,7 +34,6 @@
     max-width: 1200px;
     box-sizing: border-box;
     padding: 0;
-
 }
 
 .menu_list {
@@ -42,7 +43,6 @@
     padding: 0;
     flex-grow: 1;
     justify-content: center;
-
 }
 
 .menu_list li {
@@ -79,8 +79,6 @@
     width: 150px;
 }
 
-
-
 .product_card {
     margin: 20px;
 }
@@ -99,8 +97,6 @@
 .product_card img:hover {
     transform: scale(1.1);
 }
-
-
 
 .product_img {
     display: flex;
@@ -124,7 +120,7 @@
     background-color: darkred !important;
     color: white !important;
     border-color: darkred !important;
-  }
+}
 
 .full-width-dropdown .dropdown-toggle, .plus_btn {
     width: 100%;
@@ -154,48 +150,59 @@
 }
 
 .plus_btn:active {
-    background-color: #707070; /* 클릭했을 때 색상을 더 진하게 변경 (예: #707070) */
+    background-color: #707070;
     transform: scale(0.99);
 }
 
 
+
 @media (max-width: 768px) {
     .menu_area {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     .input_area {
-      width: 100%;
-      margin-top: 10px;
+        width: 100%;
+        margin-top: 10px;
     }
-  
+
     .input_area input {
-      width: 100%;
+        width: 100%;
     }
-  
+
     .login_button {
-      width: 100%;
+        width: 100%;
     }
-  
+
+    .navbar-toggler {
+        position: absolute;
+        left: 0;
+    }
+
+    .navbar-brand {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .navbar-collapse {
-      width: 100%;
+        width: 100%;
     }
-  
+
     .navbar-nav {
-      width: 100%;
+        width: 100%;
     }
-  
+
     .nav-link {
-      width: 100%;
-      text-align: left;
+        width: 100%;
+        text-align: left;
     }
-  }
-  
-  .custom-navbar .d-none {
-    display: none !important;
-  }
-  
-  .custom-navbar .d-lg-flex {
-    display: flex !important;
-  }
+
+    .custom-navbar .d-none {
+        display: none !important;
+    }
+
+    .custom-navbar .d-lg-flex {
+        display: flex !important;
+    }
+}
