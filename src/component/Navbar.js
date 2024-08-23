@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { useNavigate } from "react-router-dom";
-import { Navbar as BootstrapNavbar, Nav, Container } from "react-bootstrap";
+import { Navbar as BootstrapNavbar, Nav, Container, Offcanvas } from "react-bootstrap";
 
 const Navbar = ({ isAuthenticated, setAuthenticate }) => {
   const menuList = [
@@ -44,7 +44,7 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
   };
 
   return (
-    <BootstrapNavbar bg="light" expand="lg" className="mb-3">
+    <BootstrapNavbar expand="lg" className="mb-3 custom-navbar">
       <Container fluid>
         <BootstrapNavbar.Brand onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
           <img
@@ -53,31 +53,39 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
             alt="메인로고"
           />
         </BootstrapNavbar.Brand>
-        <BootstrapNavbar.Toggle aria-controls="navbarScroll" />
-        <BootstrapNavbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-            {menuList.map((menu, index) => (
-              <Nav.Link key={index} onClick={() => navigate(`/${menu}`)}>
-                {menu}
-              </Nav.Link>
-            ))}
-          </Nav>
-          <div className="d-flex align-items-center">
-            <div className="input_area">
-              <FontAwesomeIcon className="icon_search" icon={faSearch} />
-              <input
-                type="text"
-                onKeyPress={(event) => search(event)}
-                placeholder="Search..."
-              />
+        <BootstrapNavbar.Toggle aria-controls="offcanvasNavbar" />
+        <BootstrapNavbar.Offcanvas
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="start"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel">메뉴</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              {menuList.map((menu, index) => (
+                <Nav.Link key={index} onClick={() => navigate(`/${menu}`)}>
+                  {menu}
+                </Nav.Link>
+              ))}
+            </Nav>
+            <div className="d-flex align-items-center mt-3">
+              <div className="input_area w-100">
+                <FontAwesomeIcon className="icon_search" icon={faSearch} />
+                <input
+                  type="text"
+                  onKeyPress={(event) => search(event)}
+                  placeholder="Search..."
+                />
+              </div>
+              <div className="login_button ms-3" onClick={goToLogin}>
+                <FontAwesomeIcon icon={faUser} />
+                <div>{isAuthenticated ? "로그아웃" : "로그인"}</div>
+              </div>
             </div>
-            <div className="login_button ms-3" onClick={goToLogin}>
-              <FontAwesomeIcon icon={faUser} />
-              <div>{isAuthenticated ? "로그아웃" : "로그인"}</div> 
-              {/* 로그인 상태에 따라 텍스트 변경 */}
-            </div>
-          </div>
-        </BootstrapNavbar.Collapse>
+          </Offcanvas.Body>
+        </BootstrapNavbar.Offcanvas>
       </Container>
     </BootstrapNavbar>
   );

@@ -173,7 +173,7 @@
     .input_area input {
       width: 100%;
     }
-    
+  
     .login_button {
       width: 100%;
     }
@@ -181,13 +181,21 @@
     .navbar-collapse {
       width: 100%;
     }
-    
+  
     .navbar-nav {
       width: 100%;
     }
-    
+  
     .nav-link {
       width: 100%;
       text-align: left;
     }
+  }
+  
+  .custom-navbar .d-none {
+    display: none !important;
+  }
+  
+  .custom-navbar .d-lg-flex {
+    display: flex !important;
   }
