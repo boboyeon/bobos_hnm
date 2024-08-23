@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.nav_section img {
+    cursor: pointer;
+}
+
 .menu_section {
     display: flex;
     justify-content: center;
