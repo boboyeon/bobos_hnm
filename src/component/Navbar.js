@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { useNavigate } from "react-router-dom";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar as BootstrapNavbar, Nav, Container } from "react-bootstrap";
 
 const Navbar = ({ isAuthenticated, setAuthenticate }) => {
   const menuList = [
@@ -44,24 +44,18 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
   };
 
   return (
-    <Navbar bg="light" expand="lg" className="mb-3"> 
-      {/* 부트스트랩 Navbar 사용 */}
-      <Container fluid> 
-        {/* 부트스트랩 Container 사용 */}
-        <Navbar.Brand onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-          {/* 로고 클릭 시 메인 페이지로 이동 */}
+    <BootstrapNavbar bg="light" expand="lg" className="mb-3">
+      <Container fluid>
+        <BootstrapNavbar.Brand onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
           <img
             width={100}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSWOhkrtrLKgKz35SOCEsZV-v2q_yeKpMgw&s"
             alt="메인로고"
           />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" /> 
-        {/* 햄버거 메뉴 버튼 */}
-        <Navbar.Collapse id="navbarScroll"> 
-          {/* 부트스트랩 메뉴 컬랩스 */}
-          <Nav className="me-auto my-2 my-lg-0" navbarScroll> 
-            {/* 부트스트랩 Nav 사용 */}
+        </BootstrapNavbar.Brand>
+        <BootstrapNavbar.Toggle aria-controls="navbarScroll" />
+        <BootstrapNavbar.Collapse id="navbarScroll">
+          <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             {menuList.map((menu, index) => (
               <Nav.Link key={index} onClick={() => navigate(`/${menu}`)}>
                 {menu}
@@ -83,9 +77,9 @@ const Navbar = ({ isAuthenticated, setAuthenticate }) => {
               {/* 로그인 상태에 따라 텍스트 변경 */}
             </div>
           </div>
-        </Navbar.Collapse>
+        </BootstrapNavbar.Collapse>
       </Container>
-    </Navbar>
+    </BootstrapNavbar>
   );
 };
 
